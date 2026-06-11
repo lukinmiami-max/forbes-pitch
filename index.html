@@ -692,8 +692,7 @@ body {
 
   <!-- 01 COVER -->
   <div class="slide slide-cover">
-    <div class="cover-forbes">Forbes Russia</div>
-    <div>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
       <div class="cover-h1" style="font-size:88px;">Один бренд.<br>Два аккаунта.<br><em>Разные результаты.</em></div>
       <div class="cover-tagline">Почему Forbes Club растёт, пока Forbes Russia теряет аудиторию - и что с этим делать</div>
     </div>
@@ -1117,7 +1116,7 @@ body {
 
           <!-- Пост 1 - Галицкий -->
           <div style="background:var(--card-dark); border:1px solid rgba(200,168,75,0.3); overflow:hidden; display:flex; flex-direction:column;">
-            <img src="Галицкий 2.png" style="width:100%; aspect-ratio:9/16; object-fit:cover; object-position:top; display:block;">
+            <img src="galitsky.png" style="width:100%; aspect-ratio:9/16; object-fit:cover; object-position:top; display:block;">
             <div style="padding:12px 14px; display:flex; flex-direction:column; gap:8px;">
               <div style="display:flex; align-items:center; gap:8px;">
                 <div style="font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">Reel</div>
@@ -1150,7 +1149,7 @@ body {
 
           <!-- Пост 2 - Артем Кей / MAX -->
           <div style="background:var(--card-dark); border:1px solid rgba(200,168,75,0.3); overflow:hidden; display:flex; flex-direction:column;">
-            <img src="Артём Кей.png" style="width:100%; aspect-ratio:9/16; object-fit:cover; object-position:top; display:block;">
+            <img src="artem-key.png" style="width:100%; aspect-ratio:9/16; object-fit:cover; object-position:top; display:block;">
             <div style="padding:12px 14px; display:flex; flex-direction:column; gap:8px;">
               <div style="display:flex; align-items:center; gap:8px;">
                 <div style="font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">Reel</div>
@@ -1183,7 +1182,7 @@ body {
 
           <!-- Пост 3 - Вьюгин -->
           <div style="background:var(--card-dark); border:1px solid rgba(200,168,75,0.3); overflow:hidden; display:flex; flex-direction:column;">
-            <img src="Вьюгин.png" style="width:100%; aspect-ratio:9/16; object-fit:cover; object-position:top; display:block;">
+            <img src="vyugin.png" style="width:100%; aspect-ratio:9/16; object-fit:cover; object-position:top; display:block;">
             <div style="padding:12px 14px; display:flex; flex-direction:column; gap:8px;">
               <div style="display:flex; align-items:center; gap:8px;">
                 <div style="font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">Reel</div>
@@ -1548,9 +1547,9 @@ body {
 
       <!-- Фото -->
       <div style="flex-shrink:0; width:240px;">
-        <div style="width:240px; height:320px; background:rgba(200,168,75,0.06); border:1px solid rgba(200,168,75,0.3); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-          <img id="author-photo" src="" alt="Дмитрий Лукин" style="width:100%; height:100%; object-fit:cover; display:none;">
-          <div id="photo-placeholder" style="text-align:center; padding:20px;">
+        <div style="width:240px; height:320px; background:transparent; border:none; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
+          <img id="author-photo" src="lukin-photo.png" alt="Дмитрий Лукин" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;">
+          <div id="photo-placeholder" style="text-align:center; padding:20px; display:none;">
             <div style="font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(200,168,75,0.4);">Фото</div>
             <div style="font-size:11px; color:rgba(255,255,255,0.2); margin-top:8px;">3 : 4</div>
           </div>
@@ -1605,15 +1604,14 @@ body {
   </div>
 
   <!-- ФИНАЛ -->
-  <div class="slide" style="justify-content:center; padding-top:48px;">
-    <div class="slide-top">Следующий шаг</div>
+  <div class="slide" style="justify-content:flex-start; padding-top:80px; min-height:auto;">
     <div class="label" style="color:var(--gold);">Следующий шаг</div>
     <div class="author-final" style="margin-top:0;">
       <div class="name">Дмитрий Лукин</div>
-      <div class="role" style="margin-bottom:20px;">Предприниматель - Контент-стратег - AI-нативность</div>
+      <div class="role" style="margin-bottom:20px;">Предприниматель - Контент-стратег - Медиапродюсер - AI креатор</div>
       <div style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7; max-width:560px; margin-bottom:24px;">Если этот подход к контент-системе Forbes Russia вас заинтересовал — готов обсудить детали.</div>
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <div style="font-size:15px; color:var(--gold); font-weight:600;">Telegram: <a href="https://t.me/lukinmiami" style="color:var(--gold);">@lukinmiami</a></div>
+        <div style="font-size:15px; color:var(--gold); font-weight:600;">Telegram: <a href="https://t.me/dmitrimiami" target="_blank" style="color:var(--gold);">@dmitrimiami</a></div>
         <div style="font-size:15px; color:rgba(255,255,255,0.7); font-weight:600;">Tel: <a href="tel:+79964099008" style="color:rgba(255,255,255,0.7);">+7 996 409 90 08</a></div>
       </div>
     </div>
