@@ -530,6 +530,10 @@ body {
   .center-block { flex-direction: column !important; gap: 20px !important; padding: 20px !important; }
   .center-block > div:last-child { border-left: none !important; border-top: 1px solid rgba(200,168,75,0.2) !important; padding-left: 0 !important; padding-top: 20px !important; min-width: auto !important; }
 
+  /* Слайд 07 — стек на мобильном */
+  .author-wrap { flex-direction: column !important; gap: 24px !important; }
+  .author-cols { grid-template-columns: 1fr !important; }
+
   /* Charts container → scrollable if needed */
   .slide > div > div[style*="width:840px"],
   .slide div[style*="width:840"] {
@@ -1464,7 +1468,7 @@ body {
     <div class="slide-top">Автор предложения</div>
     <div class="big-num">07</div>
     <div class="label">Автор предложения</div>
-    <div style="display:flex; gap:48px; align-items:flex-start; width:100%; max-width:960px;">
+    <div class="author-wrap" style="display:flex; gap:48px; align-items:flex-start; width:100%; max-width:960px;">
 
       <!-- Фото -->
       <div style="flex-shrink:0; width:240px;">
@@ -1480,7 +1484,7 @@ body {
       </div>
 
       <!-- 3 колонки -->
-      <div style="flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; align-items:start;">
+      <div class="author-cols" style="flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; align-items:start;">
 
         <!-- Бизнес -->
         <div style="background:rgba(200,168,75,0.06); border:1px solid rgba(200,168,75,0.25); border-top:3px solid var(--gold); padding:20px;">
