@@ -455,12 +455,16 @@ body {
   }
   #audience svg { width: 220px !important; }
 
-  /* Chart SVGs — scale to fit */
+  /* Chart SVGs — горизонтальный скролл, полный размер для читаемости текста */
   svg[viewBox="0 0 840 260"] {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 840 / 260;
-    min-width: 0 !important;
+    width: 840px !important;
+    min-width: 840px !important;
+    height: 260px !important;
+  }
+  /* Контейнер с графиком — прокручивается */
+  div:has(svg[viewBox="0 0 840 260"]) {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   /* Segment flow connector — hide lines on mobile */
