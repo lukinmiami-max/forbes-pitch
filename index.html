@@ -390,6 +390,65 @@ body {
 /* Номера ярусов пирамиды — скрыты на десктопе */
 .tier-num { display: none; }
 
+/* Бургер-кнопка */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+.burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.25s;
+}
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Мобильное меню */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 48px;
+  right: 0;
+  width: 220px;
+  background: #111;
+  border-left: 1px solid rgba(200,168,75,0.3);
+  border-bottom: 1px solid rgba(200,168,75,0.3);
+  z-index: 1000;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-link {
+  padding: 16px 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-link:hover { color: var(--gold); background: rgba(200,168,75,0.06); }
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0,0,0,0.4);
+}
+.mobile-overlay.open { display: block; }
+
 /* Строки проектов в потоках */
 .proj-row {
   display: flex;
@@ -441,6 +500,7 @@ body {
   /* Navigation */
   .top-nav { padding: 14px 20px; }
   .top-nav .nav-links { display: none; }
+  .burger { display: flex; }
 
   /* Slides */
   .slide {
@@ -611,7 +671,21 @@ body {
     <a href="#tov">Система</a>
     <a href="#why">Автор</a>
   </div>
+  <button class="burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Мобильное меню -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#audience" class="mobile-link">Аудитория</a>
+  <a href="#diagnosis" class="mobile-link">Диагноз</a>
+  <a href="#analytics" class="mobile-link">Аналитика</a>
+  <a href="#решение" class="mobile-link">Решение</a>
+  <a href="#tov" class="mobile-link">Система</a>
+  <a href="#why" class="mobile-link">Автор</a>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
 
 <div id="slides">
 <div id="slides">
@@ -1565,6 +1639,28 @@ body {
   }, { threshold: 0.4 });
 
   sections.forEach(s => observer.observe(s));
+
+  // Mobile menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+
+  function openMenu() {
+    burger.classList.add('open');
+    mobileMenu.style.display = 'flex';
+    overlay.classList.add('open');
+    requestAnimationFrame(() => mobileMenu.classList.add('open'));
+  }
+  function closeMenu() {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('open');
+    setTimeout(() => { mobileMenu.style.display = 'none'; }, 300);
+  }
+
+  burger.addEventListener('click', () => burger.classList.contains('open') ? closeMenu() : openMenu());
+  overlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
 </script>
 </body>
 </html>
