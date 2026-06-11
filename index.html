@@ -390,6 +390,25 @@ body {
 /* Номера ярусов пирамиды — скрыты на десктопе */
 .tier-num { display: none; }
 
+/* Строки проектов в потоках */
+.proj-row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.proj-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  min-width: 96px;
+  flex-shrink: 0;
+}
+.proj-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.45;
+}
+
 /* ==================== */
 /* AUDIENCE — широкий breakpoint, чтобы не ломалось при среднем окне */
 /* ==================== */
@@ -501,6 +520,11 @@ body {
 
   /* Номера ярусов — показать на мобильном */
   .tier-num { display: inline !important; opacity: 0.55; font-weight: 700; }
+
+  /* Строки проектов — вертикальный стек на мобильном */
+  .proj-row { flex-direction: column !important; gap: 3px !important; }
+  .proj-label { min-width: auto !important; font-size: 11px !important; }
+  .proj-text { font-size: 13px !important; }
 
   /* Charts container → scrollable if needed */
   .slide > div > div[style*="width:840px"],
@@ -1361,21 +1385,21 @@ body {
         <div style="background:rgba(200,168,75,0.06); border:1px solid rgba(200,168,75,0.3); border-top:3px solid var(--gold); padding:20px 24px;">
           <div style="font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Поток Premium</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:var(--gold); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">Telegram</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.45;">@forbesclubrussia (22K) — редакционный голос, не только анонсы событий.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:var(--gold);">Telegram</div>
+              <div class="proj-text">@forbesclubrussia (22K) — редакционный голос, не только анонсы событий.</div>
             </div>
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:var(--gold); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">YouTube</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.45;"><strong style="color:rgba(200,168,75,0.85);">Forbes Бизнес-класс</strong> — роуд-муви Озмана с предпринимателями, усиливаем. <strong style="color:rgba(200,168,75,0.85);">Миллион на салфетке</strong> — тур по 4 городам, полный формат.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:var(--gold);">YouTube</div>
+              <div class="proj-text"><strong style="color:rgba(200,168,75,0.85);">Forbes Бизнес-класс</strong> — роуд-муви Озмана, усиливаем. <strong style="color:rgba(200,168,75,0.85);">Миллион на салфетке</strong> — тур по 4 городам.</div>
             </div>
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:var(--gold); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">club.forbes.ru</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.45;">Premium-хаб: объединяем club.forbes.ru и раздел на Forbes.ru. Клуб перестаёт быть невидимым.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:var(--gold);">club.forbes.ru</div>
+              <div class="proj-text">Premium-хаб: объединяем club.forbes.ru и раздел Forbes.ru. Клуб перестаёт быть невидимым.</div>
             </div>
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:var(--gold); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">Библиотека</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.45;"><strong style="color:rgba(200,168,75,0.85);">Библиотека Forbes</strong> — книжный клуб для резидентов: серии по стратегии, маркетингу, продажам, безопасности.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:var(--gold);">Библиотека</div>
+              <div class="proj-text"><strong style="color:rgba(200,168,75,0.85);">Библиотека Forbes</strong> — книжный клуб для резидентов: стратегия, маркетинг, продажи, безопасность.</div>
             </div>
           </div>
           <div style="border-top:1px solid rgba(200,168,75,0.15); padding-top:12px; font-size:12px; color:var(--gold); font-weight:600;">→ Конвертация в членство · Лояльность резидентов</div>
@@ -1385,29 +1409,29 @@ body {
         <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.1); border-top:3px solid rgba(255,255,255,0.25); padding:20px 24px;">
           <div style="font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:14px;">Поток Mass</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:rgba(255,255,255,0.5); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">Миллион<br>на салфетке</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.45); line-height:1.45;">Питч-шоу: короткий формат — Reels с городского тура по 4 городам. Питч + реакция инвестора = триггер.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:rgba(255,255,255,0.5);">Миллион на салфетке</div>
+              <div class="proj-text">Питч-шоу: Reels с городского тура по 4 городам. Питч + реакция инвестора = триггер.</div>
             </div>
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:rgba(255,255,255,0.5); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">Сколько стоит<br>открыть</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.45); line-height:1.45;">Кофейня, франшиза, производство — реальные цифры, частые ошибки, статьи расходов. Аналитика через историю.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:rgba(255,255,255,0.5);">Сколько стоит открыть</div>
+              <div class="proj-text">Кофейня, франшиза, производство — реальные цифры, частые ошибки, статьи расходов.</div>
             </div>
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:rgba(255,255,255,0.5); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">Как зарабатывали<br>они</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.45); line-height:1.45;">Истории состояний через деньги: как именно, на чём, в какой момент. Формат Forbes — герой через цифры.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:rgba(255,255,255,0.5);">Как зарабатывали они</div>
+              <div class="proj-text">Истории состояний через деньги: как именно, на чём, в какой момент. Герой через цифры.</div>
             </div>
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:rgba(255,255,255,0.5); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">Сделано<br>в России</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.45); line-height:1.45;">Уникальные российские разработки и продукты — наука в производстве, импортозамещение с лицом и историей.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:rgba(255,255,255,0.5);">Сделано в России</div>
+              <div class="proj-text">Уникальные российские разработки — наука в производстве, импортозамещение с лицом.</div>
             </div>
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:rgba(255,255,255,0.5); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">Артефакты<br>СЕО</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.45); line-height:1.45;">Карусель: стол знаменитого CEO — Джобс, Маск, Безос. Каждый предмет — деталь характера. Личность через вещи.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:rgba(255,255,255,0.5);">Артефакты СЕО</div>
+              <div class="proj-text">Карусель: стол знаменитого CEO — Джобс, Маск, Безос. Каждый предмет — деталь характера.</div>
             </div>
-            <div style="display:flex; gap:12px; align-items:baseline;">
-              <div style="font-size:10px; font-weight:700; color:rgba(255,255,255,0.5); min-width:80px; flex-shrink:0; letter-spacing:0.5px;">Пять самых</div>
-              <div style="font-size:12px; color:rgba(255,255,255,0.45); line-height:1.45;">Карусель-формат: 5 самых дорогих яхт, квартир, часов, произведений искусства. Аспирация через цифры — работает на охват.</div>
+            <div class="proj-row">
+              <div class="proj-label" style="color:rgba(255,255,255,0.5);">Пять самых</div>
+              <div class="proj-text">Карусель: 5 самых дорогих яхт, квартир, часов, произведений искусства. Аспирация через цифры.</div>
             </div>
           </div>
           <div style="border-top:1px solid rgba(255,255,255,0.07); padding-top:12px; font-size:12px; color:rgba(255,255,255,0.45); font-weight:600;">Instagram · YouTube Shorts · Telegram → Охват · Рост · Вовлечённость</div>
