@@ -412,8 +412,13 @@ body {
   .cover-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
 
   /* Class-based grids */
-  .grid-2 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr !important; }
   .tov-grid { grid-template-columns: 1fr; }
+
+  /* Сбрасываем span 2 — иначе грид не коллапсирует в 1 колонку */
+  .grid-2 > [style*="grid-column"] { grid-column: span 1 !important; }
+  [style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  [style*="grid-column:span 2"]  { grid-column: span 1 !important; }
   .tov-gap { grid-column: span 1; flex-direction: column; gap: 6px; }
   .projects { grid-template-columns: 1fr; }
 
