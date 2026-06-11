@@ -391,6 +391,31 @@ body {
 .tier-num { display: none; }
 
 /* ==================== */
+/* AUDIENCE — широкий breakpoint, чтобы не ломалось при среднем окне */
+/* ==================== */
+@media (max-width: 1100px) {
+  #audience div[style*="display:flex"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+  }
+  #audience div[style*="flex:1; position:relative; height:400px"] {
+    position: static !important;
+    height: auto !important;
+    padding-left: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #audience div[style*="position:absolute"] {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ==================== */
 /* MOBILE RESPONSIVE    */
 /* ==================== */
 @media (max-width: 860px) {
@@ -439,26 +464,7 @@ body {
     grid-template-columns: 1fr !important;
   }
 
-  /* Audience pyramid — stack vertically */
-  #audience div[style*="display:flex"] {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 24px !important;
-  }
-  #audience div[style*="flex:1; position:relative; height:400px"] {
-    position: static !important;
-    height: auto !important;
-    padding-left: 0 !important;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  #audience div[style*="position:absolute"] {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    max-width: 100% !important;
-  }
+  /* Audience pyramid — SVG smaller on mobile */
   #audience svg { width: 220px !important; }
 
   /* Chart SVGs — горизонтальный скролл, полный размер для читаемости текста */
