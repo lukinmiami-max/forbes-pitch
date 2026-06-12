@@ -1326,25 +1326,6 @@ body {
     <!-- Центры сегментов: UHNWI=113, HNW=351, GK=589, Стрем=827 -->
     <!-- Центры потоков: Premium=231 (левый), Mass=693 (правый) -->
     <div class="seg-flow" style="width:100%; max-width:940px; margin:-2px 0 -2px; position:relative;">
-      <svg class="seg-flow-lines" viewBox="0 0 940 56" width="100%" height="56" preserveAspectRatio="none" style="display:block; overflow:visible;">
-        <!-- UHNWI → Premium (золото, сильный) -->
-        <line x1="113" y1="2" x2="231" y2="54" stroke="rgba(200,168,75,0.65)" stroke-width="2" stroke-dasharray="5,4"/>
-        <!-- HNW/Club → Premium (золото) -->
-        <line x1="351" y1="2" x2="231" y2="54" stroke="rgba(200,168,75,0.5)" stroke-width="2" stroke-dasharray="5,4"/>
-        <!-- Gatekeepers → Premium (золото, dim) -->
-        <line x1="589" y1="2" x2="231" y2="54" stroke="rgba(200,168,75,0.25)" stroke-width="1.5" stroke-dasharray="5,4"/>
-        <!-- Gatekeepers → Mass (белый, dim) -->
-        <line x1="589" y1="2" x2="693" y2="54" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="5,4"/>
-        <!-- Стремящиеся → Mass (белый) -->
-        <line x1="827" y1="2" x2="693" y2="54" stroke="#c8a84b" stroke-width="2" stroke-dasharray="5,4"/>
-        <!-- Подписи -->
-        <text x="231" y="53" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" font-weight="700" fill="rgba(200,168,75,0.6)" letter-spacing="2">PREMIUM</text>
-        <text x="693" y="53" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,0.35)" letter-spacing="2">MASS</text>
-      </svg>
-      <div class="seg-flow-mobile" style="display:none; gap:8px; flex-direction:column; padding:8px 0;">
-        <div style="font-size:10px; color:rgba(255,255,255,0.35);">UHNWI, HNW/Club, Gatekeepers → <span style="color:rgba(200,168,75,0.8);">Premium поток</span></div>
-        <div style="font-size:10px; color:rgba(255,255,255,0.35);">Gatekeepers, Стремящиеся → <span style="color:rgba(255,255,255,0.6);">Mass поток</span></div>
-      </div>
     </div>
 
     <!-- Потоки: Premium слева, Mass справа -->
@@ -1461,25 +1442,6 @@ body {
         </div>
       </div>
 
-      <!-- Стрелка с разветвлением на два потока -->
-      <div style="position:relative; height:48px; width:100%;">
-        <svg width="100%" height="48" viewBox="0 0 960 48" preserveAspectRatio="none">
-          <!-- Центральная линия вниз -->
-          <line x1="480" y1="0" x2="480" y2="24" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <!-- Ветвление влево к Premium (центр ~240) -->
-          <line x1="480" y1="24" x2="240" y2="24" stroke="rgba(200,168,75,0.35)" stroke-width="1.5"/>
-          <!-- Ветвление вправо к Mass (центр ~720) -->
-          <line x1="480" y1="24" x2="720" y2="24" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-          <!-- Стрелки вниз -->
-          <line x1="240" y1="24" x2="240" y2="42" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <line x1="720" y1="24" x2="720" y2="42" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <path d="M234 38 L240 46 L246 38" fill="none" stroke="rgba(200,168,75,0.35)" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M714 38 L720 46 L726 38" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linejoin="round"/>
-          <!-- Подписи потоков -->
-          <text x="170" y="28" font-family="Manrope,sans-serif" font-size="8" font-weight="700" fill="rgba(200,168,75,0.55)" letter-spacing="2">PREMIUM</text>
-          <text x="748" y="28" font-family="Manrope,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,0.3)" letter-spacing="2">MASS</text>
-        </svg>
-      </div>
 
       <!-- Строка 3: два потока -->
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
