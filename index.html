@@ -451,6 +451,17 @@ body {
 }
 .mobile-overlay.open { display: block; }
 
+/* Два потока — стекаются при среднем экране */
+.flow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 960px) {
+  .flow-grid { grid-template-columns: 1fr !important; }
+  .proj-row  { grid-template-columns: 150px 1fr; }
+}
+
 /* Строки проектов в потоках */
 .proj-row {
   display: grid;
@@ -1444,7 +1455,7 @@ body {
 
 
       <!-- Строка 3: два потока -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div class="flow-grid">
 
         <!-- Premium -->
         <div style="background:rgba(200,168,75,0.06); border:1px solid rgba(200,168,75,0.3); border-top:3px solid var(--gold); padding:20px 24px;">
