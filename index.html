@@ -594,8 +594,7 @@ body {
   .center-block > div:last-child { border-left: none !important; border-top: 1px solid rgba(200,168,75,0.2) !important; padding-left: 0 !important; padding-top: 20px !important; min-width: auto !important; }
 
   /* Слайд 07 — стек на мобильном */
-  .author-wrap { grid-template-columns: 1fr !important; gap: 24px !important; }
-  .author-cols { grid-template-columns: 1fr !important; }
+  #author-blocks { grid-template-columns: 1fr !important; }
 
   /* Charts container → scrollable if needed */
   .slide > div > div[style*="width:840px"],
@@ -1546,10 +1545,10 @@ body {
     <div class="slide-top">Автор предложения</div>
     <div class="big-num">07</div>
     <div class="label">Автор предложения</div>
-    <div class="author-wrap" style="display:grid; grid-template-columns:240px 1fr; gap:48px; width:100%; max-width:1100px; align-items:start;">
+    <div id="author-grid" style="display:flex; flex-wrap:wrap; gap:32px; width:100%; max-width:1100px; align-items:flex-start;">
 
       <!-- Фото -->
-      <div>
+      <div style="flex-shrink:0; width:240px;">
         <div style="width:240px; height:320px; background:transparent; border:none; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
           <img id="author-photo" src="lukin-photo.png" alt="Дмитрий Лукин" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;">
           <div id="photo-placeholder" style="text-align:center; padding:20px; display:none;">
@@ -1562,7 +1561,7 @@ body {
       </div>
 
       <!-- 2×2 сетка -->
-      <div class="author-cols" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
+      <div id="author-blocks" style="flex:1; min-width:300px; display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; align-items:start;">
 
         <!-- Бизнес -->
         <div style="background:rgba(200,168,75,0.06); border:1px solid rgba(200,168,75,0.25); border-top:3px solid var(--gold); padding:20px;">
