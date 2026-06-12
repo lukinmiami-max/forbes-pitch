@@ -668,6 +668,33 @@ body {
   .slide [style*="font-size:12px"] { font-size: 15px !important; }
   .slide [style*="font-size:13px"] { font-size: 16px !important; }
 }
+/* Кнопка наверх */
+#back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#back-to-top:hover { background: var(--gold-light); }
+@media (max-width: 860px) {
+  #back-to-top { bottom: 20px; right: 16px; width: 40px; height: 40px; }
+}
 </style>
 </head>
 <body>
@@ -1651,6 +1678,19 @@ body {
   burger.addEventListener('click', () => burger.classList.contains('open') ? closeMenu() : openMenu());
   overlay.addEventListener('click', closeMenu);
   document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
+</script>
+
+<button id="back-to-top" aria-label="Наверх">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8 13V3M8 3L3 8M8 3L13 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+<script>
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
 </body>
 </html>
