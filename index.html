@@ -34,19 +34,17 @@ body {
 
 /* Sticky nav */
 .top-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 200;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 18px 96px;
-  background: rgba(12,12,12,0.92);
+  background: rgba(12,12,12,0.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-dark);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
 }
 
 .top-nav .nav-logo {
@@ -74,19 +72,19 @@ body {
 .top-nav .nav-links a:hover { color: var(--gold); }
 
 .slide {
-  min-height: 100vh;
+  min-height: calc(100vh - 57px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 120px 96px 80px;
+  padding: 64px 96px 80px;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border-dark);
 }
 
 .slide-top {
-  position: absolute; top: 80px; left: 96px;
+  position: absolute; top: 24px; left: 96px;
   font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
   color: rgba(255,255,255,0.18); font-weight: 600;
 }
@@ -507,11 +505,11 @@ body {
 
   /* Slides */
   .slide {
-    padding: 70px 20px 48px;
+    padding: 40px 20px 48px;
     min-height: auto;
     overflow-x: hidden;
   }
-  .slide-top { left: 20px; top: 46px; font-size: 9px; }
+  .slide-top { left: 20px; top: 14px; font-size: 9px; }
   .big-num { font-size: 130px; right: -4px; bottom: -20px; letter-spacing: -4px; }
 
   /* Typography */
